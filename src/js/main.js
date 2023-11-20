@@ -84,7 +84,7 @@ function onWindowResize(){
 
 function addSkybox(){
     var loader = new THREE.TextureLoader();
-    loader.load("../src/img/nightbox.jpeg", function ( texture ) {
+    loader.load("src/img/nightbox.jpeg", function ( texture ) {
         var geometry = new THREE.SphereGeometry( 250, 20, 20 );
         var material = new THREE.MeshBasicMaterial( { map: texture, overdraw: 0.5, side : THREE.DoubleSide} );
         skybox = new THREE.Mesh( geometry, material );
@@ -92,16 +92,15 @@ function addSkybox(){
 } );
 }
 function toggleSkybox(){
-    var selected_skybox
-    var new_material
+    var selected_skybox;
+    var new_material;
     if(!skybox_bool){
         skybox_bool = true;
-        selected_skybox = "../src/img/skybox.jpg"
-        light.colo
+        selected_skybox = "src/img/skybox.jpg"
     }
     else{
         skybox_bool = false;
-        selected_skybox = "../src/img/nightbox.jpeg"
+        selected_skybox = "src/img/nightbox.jpeg"
     }
     skybox.material.map = THREE.ImageUtils.loadTexture(selected_skybox);
 }
@@ -142,17 +141,6 @@ function loadOBJMTL(path, nameMTL, nameOBJ, scale_multiplier = 1.0, waterMateria
 });
 }
 
-function gameState(Case){
-    switch(Case){
-        case "game":
-            break;
-        case "win":
-            break;
-        case "lose":
-            document.getElementById("loseScreen").style.display = "block";
-    }
-}
-
 function createLights(typeLights){
     //PointLight, SpotLight, AmbientLight
     switch(typeLights){
@@ -190,19 +178,19 @@ function toggleMute(){
 
 //Funcion para iniciar la musica y los efectos de sonido
 function initSound3D() { 
-    music = new Sound(["../src/sound/soundtrack.mp3"], 50, scene, {
-        position: {x:0, y:15, z:0},
+    music = new Sound(["src/sound/soundtrack.mp3"], 50, scene, {
+        position: {x:0, y:0, z:0},
     });
-    ambiance = new Sound(["../src/sound/ambiance.mp3"], 50, scene, {
-        position: {x:0, y:15, z:0},
+    ambiance = new Sound(["src/sound/ambiance.mp3"], 50, scene, {
+        position: {x:0, y:0, z:0},
     });
-    sharksfx = new Sound(["../src/sound/shark_sfx.mp3"], 60, scene, {
+    sharksfx = new Sound(["src/sound/shark_sfx.mp3"], 60, scene, {
         position: {x:0, y:0, z:0}
     });
-    turtlesfx = new Sound(["../src/sound/water_sound.mp3"], 100, scene, {
+    turtlesfx = new Sound(["src/sound/water_sound.mp3"], 100, scene, {
         position: {x:0, y:0, z:0}
     });
-    monkeysfx = new Sound(["../src/sound/monkey_sfx.mp3"], 30, scene, {
+    monkeysfx = new Sound(["src/sound/monkey_sfx.mp3"], 30, scene, {
         position: {x:0, y:0, z:0}
     });
     music.play();
