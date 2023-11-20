@@ -193,8 +193,6 @@ function initSound3D() {
     monkeysfx = new Sound(["src/sound/monkey_sfx.mp3"], 30, scene, {
         position: {x:0, y:0, z:0}
     });
-    music.play();
-    ambiance.play();
 }
 
 //Funcion de proceso fisica, se ejecuta cada frame disponible
@@ -207,6 +205,8 @@ function animate() {
     sharksfx.play();
     turtlesfx.play();
     monkeysfx.play();
+    music.play();
+    ambiance.play();
     //Bloque de update (sonido espacial) para los SFX
     sharksfx.update(camera);
     turtlesfx.update(camera);
