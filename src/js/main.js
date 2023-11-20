@@ -178,10 +178,10 @@ function toggleMute(){
 
 //Funcion para iniciar la musica y los efectos de sonido
 function initSound3D() { 
-    music = new Sound(["src/sound/soundtrack.mp3"], 50, scene, {
+    music = new Sound(["src/sound/soundtrack.mp3"], 150, scene, {
         position: {x:0, y:0, z:0},
     });
-    ambiance = new Sound(["src/sound/ambiance.mp3"], 50, scene, {
+    ambiance = new Sound(["src/sound/ambiance.mp3"], 150, scene, {
         position: {x:0, y:0, z:0},
     });
     sharksfx = new Sound(["src/sound/shark_sfx.mp3"], 60, scene, {
@@ -211,7 +211,8 @@ function animate() {
     sharksfx.update(camera);
     turtlesfx.update(camera);
     monkeysfx.update(camera);
-
+    music.update(camera);
+    ambiance.update(camera);
 
     controls.update(1.0);
 
