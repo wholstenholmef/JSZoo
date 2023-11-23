@@ -22,6 +22,7 @@ turtlesfx,
 monkeysfx;
 var mute_bool = false;
 var skybox_bool = false;
+var paused_bool = false;
 
 function createThreejs(){
     scene = new THREE.Scene();
@@ -48,6 +49,7 @@ function createThreejs(){
     createLights("AmbientLight");
     loadModels();
     addSkybox();    
+    addEventListeners();
 
     //loadOBJMTL("../models/OBJ_MTL/", "knight.mtl", "knight.obj");
     //createPlayerCollision();
@@ -73,6 +75,26 @@ function loadModels(){
     loadOBJMTL("src/models/Tiburon/", "tiburon.mtl", "tiburon.obj", 5, false, "Tiburon","../src/sound/soundtrack.mp3");
     loadOBJMTL("src/models/Tortu/", "tortu.mtl", "tortu.obj", 3, false, "Tortu");
     loadOBJMTL("src/models/Mono/", "mono.mtl", "mono.obj", 1, false, "Mono");
+}
+
+function addEventListeners() {
+    window.addEventListener('keydown', function (event) {
+        // Check if the pressed key is the Escape key (key code 27)
+        if (event.keyCode === 27) {
+            togglePause();
+        }
+    });
+}
+
+function togglePause(){
+    paused_bool = !paused_bool
+    var pauseOverlay = document.getElementById('pauseOverlay');
+    pauseOverlay.style.display = paused_bool ? 'block' : 'none';
+
+    if (paused_bool) {
+    } else {
+        // Additional resume logic (e.g., resume animations, resume sounds, etc.)
+    }
 }
 
 window.addEventListener( 'resize', onWindowResize, false );
@@ -193,25 +215,26 @@ function initSound3D() {
     monkeysfx = new Sound(["src/sound/monkey_sfx.mp3"], 30, scene, {
         position: {x:0, y:0, z:0}
     });
+    music.play();
 }
 
 //Funcion de proceso fisica, se ejecuta cada frame disponible
 function animate() {
+
 	requestAnimationFrame( animate );
     renderer.render( scene, camera );
 
+    if (paused_bool) return false;
     //skybox.rotation.y += 0.001;
     //Bloque de loop para los SFX
     sharksfx.play();
     turtlesfx.play();
     monkeysfx.play();
-    music.play();
     ambiance.play();
     //Bloque de update (sonido espacial) para los SFX
     sharksfx.update(camera);
     turtlesfx.update(camera);
     monkeysfx.update(camera);
-    music.update(camera);
     ambiance.update(camera);
 
     controls.update(1.0);
@@ -252,7 +275,7 @@ function sharkAnimation(){
     tiburon.position.y = 10
     tiburon.position.x = (Math.cos(clock.elapsedTime * speed) * radius);
     tiburon.position.z = (Math.sin(clock.elapsedTime * speed) * radius) ;
-    tiburon.rotation.y += 0.01
+    tiburon.rotation.y += 0.00001 * delta
     textBox(tiburon, "tiburon-text", 35);
     sharksfx.position = tiburon.position;
 }
