@@ -2,175 +2,101 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vectores USB</title>
-    <!-- <link rel="icon" type="image/png" href="./src/img/icon.png"> -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
-
-    <!-- SOUND -->
-    <script src="src/libs/Sound.js"></script>
-    
-    <!-- ThreeJs libs -->
-    <script src="src/libs/three.min.js"></script>
-    
-    <!-- OBJ/MTL -->
-    <script src="src/libs/OBJLoader.js"></script>
-    <script src="src/libs/MTLLoader.js"></script>
-    <!-- GLFT LOADER -->
-    <script src="src/libs/DRACOLoader.js"></script>
-    <script src="src/libs/GLTFLoader.js"></script>
-    <!-- LOGIC -->
-    <script src="src/js/main.js"></script>
-    <!-- <script src="src/js/player.js" id="player"></script> -->
-    <script src="src/libs/FirstPersonControls.js"></script>
-    <canvas id="app"></canvas>
-
-    <style>
-        *{
-            @font-face {
-            font-family: "16BFZX";
-            src: url("src/font/16bfZX.woff2") format('woff2'),
-            url('src/font/16bfZX.woff') format('woff');
-            font-weight: 500;
-            font-style: normal;
-            font-display: swap;
-            }
-        }
-        body{
-            margin: 0px;
-            overflow: hidden;
-            font-family: "16BFZX", Fallback, sans-serif;
-        }
-        #pauseOverlay {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #ffffff;
-            font-size: 24px;
-            text-align: center;
-            padding-top: 50px;
-        }
-        .titleScreen {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #ffffff;
-            z-index: 104;
-        }
-        .follow-text{
-            position: absolute;
-            top: 50%;
-            z-index: 100;
-            font-size: 20px;
-            background: #ffffff;
-            border: 4px solid black;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            justify-content: center;
-            visibility: visible;
-            padding-left: 25px;
-            padding-right: 25px;
-            line-height: 15px;
-
-        }
-        .mute_button{
-            position: absolute;
-            z-index: 101;
-            cursor: pointer;
-            bottom: 80px;
-            right: 10px;
-        }
-        .cycle_button{
-            position: absolute;
-            z-index: 101;
-            cursor: pointer;
-            bottom: 100px;
-            right: 100px;
-        }
-        img{
-            float: left;
-            padding-left: 5px;
-            padding-right: 5px;
-            padding-top: 5px;
-            padding-bottom: 5px;
-        }
-    </style>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.google.com/share?selection.family=Lilita+One">
+    <link rel="stylesheet" href="https://fonts.google.com/share?selection.family=Montserrat:ital,wght@0,100..900;1,100..900|Raleway:ital,wght@0,100..900;1,100..900">
 </head>
-
-<body onload="createThreejs()"> 
-    <header style="position: sticky;"> </header>
-    <canvas style="position:fixed" id="app"></canvas> 
-    <div id="titleScreen" class ="titleScreen" onclick="playGame()">
-        <img src="src/img/aquarium.jpg"> 
+<header> 
+    <div class="box_header"> 
+        <div class="column">
+            <h1 style="color: white;"> Ambidextrous </h1>
+        </div>
+        <div class="column">
+            <img src="./logotipo_inv.png"> </img>
+        </div>
     </div>
-    <div id="pauseOverlay">
-        <p>Pause</p>
+</header>
+<body>
+
+    <div style="padding: 30px;"> 
+    <h3> 
+    Ambydextrous es un videojuego 3D de acción y aventura para computadoras, 
+    donde los jugadores tomarán el papel de los hermanos Amari e Izara, 
+    los cuales se adentrarán en las ruinas de una antigua ciudad que los 
+    hará explorar a través de otros mundos y dimensiones. A través de mazmorras 
+    generadas aleatoriamente de manera procedural, los hermanos atravesaran 
+    múltiples dimensiones partiendo desde las ruinas de su ciudad, hasta la 
+    nave espacial donde se encuentra el jefe de los aliens.
+    </h3>
+    <h3> 
+    En cada partida del juego las mazmorras se generan de manera procedural, 
+    en donde el jugador podrá encontrar cofres con armas, máquinas expendedoras 
+    de poderosos hechizos, combatir diversos enemigos e incluso, resolver 
+    posibles acertijos dentro de las habitaciones.
+    </h3>
+    <h3> 
+    En este devlog, se presentara el progreso del videojuego a lo largo del tiempo.
+    </h3>
     </div>
-    <footer> 
-        <div class="text-center p-4 fixed-bottom fw-bold" style="background-color: rgb(0, 0, 0); line-height: 15px; color: white; font-size: larger;">
-            Parcial final computacion grafica 
-            Samuel Rendón Rodríguez <br> 
-            Ricardo Andres Correa   <br>   
-            Juan David Basto 
+
+    <div class="title_container"> 
+        <h1> Semana 1 </h1>
+    </div>
+        <h3> 
+            El proyecto empezo un viernes 9 de agosto de 2024
+
+            Todo comenzo como un proyecto de pasion, inspirado en videojuegos de rol como
+            SMT: Persona y Bioshock, queria desarrollar un videojuego en primera persona 
+            de exploracion de mazmorras, con elementos de accion y aventura.
+
+            Habian muchas ideas y conceptos que queria implementar, mas sin embargo
+            tenia una idea mas o menos clara de lo que hoy se estaria formando como Ambydextrous
+        </h3>
+    <!-- <div class="box">
+        <img src="./personaje1.jpg"width="50%" > </img> 
+        <img src="./personaje2.jpg"width="50%" style="animation-delay: 0.3s;"> </img> 
+    </div> !-->
+
+    <div class="title_container"> 
+        <h1> Semana 2 </h1>
+    </div>
+        <h3> 
+            Eventualmente, le mostre el proyecto a mis amigos, los cuales se vieron
+            interesados en participar en el proyecto.
+        </h3>
+        <div class="box">
+            <img src="./Assets/fotoErikksonStudio.jpg" width="30%"> 
         </div>
-         <div id="mute_button" class="mute_button" onclick="toggleMute()" style="float: left;"> 
-                <img id="mute_icon" src="src/img/icons/unmute1.png"> 
-        </div>
-        <div id="cycle_button" class="cycle_button" onclick="toggleSkybox()" style="float: right;"> 
-                <img id="cycle_icon" src="src/img/icons/cycle.png"> 
+        <h3> 
+            Ya consolidados como grupo, definimos nuestros roles, bajo el marco de diseñadores de 
+            personajes, mapas y enemigos, ademas del programador principal, el cual termino siendo mi persona
+        </h3>
+        <div class="box">
+            <figure> 
+                <img src="./Assets/concepto_izara1.jpg" width="100%"> 
+                <figcaption> El primer diseño de Izara es creado! </figcaption>
+            </figure>
+           
         </div>
 
-        <div id="tiburon-text" class="follow-text"> 
-            <h1> TIBURON</h1>
-            <p> 
-            <img src="src/img/icons/shark.jpg" alt="tiburon" style="width: 100; height: 100px;">
-            Los selaquimorfos son un superorden de <br>
-            condrictios (peces cartilaginosos) <br>
-            conocidos comúnmente con el nombre  <br>
-            de tiburones o escualos.
-            </p>
-        </div>
-        <div id="tortu-text" class="follow-text"> 
-            <h1>TORTUGA</h1> 
-            <p> 
-                <img src="src/img/icons/turtle.jpeg" alt="tortu" style="width: 100; height: 100px;"> 
-                Las tortugas o quelonios forman un <br>
-                orden de reptiles caracterizados  <br>
-                portener un tronco ancho y corto,  <br>
-                y un caparazón que protege los órganos internos <br>  
-                de su cuerpo. 
-            </p>
-        </div>
-        <div id="mono-text" class="follow-text"> 
-            <h1>Mono</h1>
-            <p> 
-                <img src="src/img/icons/monke.jpg" alt="monke" style="width: 100; height: 100px;"> 
-                El mono aullador rojo es una especie <br> 
-                de primate platirrino de la familia de <br>
-                los atélidos que habita en en Venezuela,<br>
-                Perú, Ecuador y Colombia,
-            </p>
-
-        </div>
-    </footer>
-    <script>
-        function playGame(){
-            document.getElementById("titleScreen").style.display = 'none';
-        }
-    </script>
+    <!--<div class="box">
+        <img src="./conceptual1.jpg" width="30%";> </img> 
+        <img src="./conceptual2.jpg" width="30%";> </img> 
+        <img src="./conceptual3.jpg" width="30%";> </img> 
+        <img src="./conceptual4.jpg" width="30%";> </img> 
+    </div> !-->
 </body>
+<footer>
+    <div>
+        <h3> 
+            Samuel Rendon Rodriguez, Laura Sofia Leon, Ricardo Andres Correa Diaz, Juan David Basto Amaya
+        </h3>
+        <h3>
+            Copyright © 2024
+        </h3>
+    </div>
+
+</footer>
+</html>

@@ -1,0 +1,94 @@
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: black;
+}
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.column{
+    padding: 5px;
+}
+.box{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    overflow: hidden;
+    border: 10px solid black;
+    border-style: double;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.box img{
+    position: relative;
+    object-fit: cover;
+    vertical-align: bottom;
+    padding: 5px;
+    animation-name: side_slide;
+    animation-duration: 1s;
+}
+.box_header{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+body{
+    position: relative;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    font-family: "Lilita One", sans-serif;
+    animation-name: slide;
+    animation-duration: 2s;
+}
+h3{
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+figcaption{
+    text-align: center;
+    color: darkslategray;
+}
+@keyframes slide {
+    from{
+        bottom: -75px;
+        
+    }
+    to{
+        bottom: 0px;
+    }
+}
+@keyframes side_slide {
+    from{
+        right: -15px;
+        scale: 0;
+        
+    }
+    to{
+        right: 0px;
+        scale: 1;
+    }
+}
+footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: black;
+    font-size: small;
+    color: white;
+    text-align: center;
+}
+.title_container{
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to bottom right, red, yellow);
+    padding: 25px;
+}
