@@ -1,3 +1,11 @@
+@font-face {
+    font-family: LilitaOne;
+    src: url("/Assets/fonts/LilitaOne-Regular.ttf") format('truetype');
+}
+@font-face {
+    font-family: Montserrat;
+    src: url("/Assets/fonts/Montserrat-VariableFont_wght.ttf") format('truetype');
+}
 header{
     position: fixed;
     top: 0;
@@ -45,20 +53,15 @@ body{
     position: relative;
     margin-top: 100px;
     margin-bottom: 100px;
-    font-family: "Lilita One", sans-serif;
+    font-family: "LilitaOne", sans-serif;
     animation-name: slide;
     animation-duration: 2s;
 }
 h3{
     text-align: center;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family:'Montserrat';
 }
-figure{
-    align-content: center;
-    justify-items: center;
-    justify-content: center;
-    align-items: center;
-}
+
 figcaption{
     text-align: center;
     color: gray;
