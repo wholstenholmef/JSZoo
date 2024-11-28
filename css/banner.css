@@ -1,0 +1,46 @@
+.pixel-banner {
+    background-color: #ff4757;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.pixel-banner::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        transparent 50%,
+        #000 50%,
+        #000 100%
+    );
+    background-size: 8px 4px;
+}
+
+.banner-content {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 0 #000;
+    animation: pixelate 2s infinite;
+    padding: 0.5rem;
+}
+
+@keyframes pixelate {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-2px);
+    }
+    75% {
+        transform: translateX(2px);
+    }
+}

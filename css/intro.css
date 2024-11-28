@@ -1,0 +1,41 @@
+.intro {
+    background-color: var(--primary-color);
+    padding: 4rem 0;
+}
+
+.intro .container {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+}
+
+.intro-image {
+    flex: 1;
+    min-width: 500px;
+    max-width: 800px;
+}
+
+.intro-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.intro-content {
+    flex: 1;
+}
+
+.intro-content h3 {
+    margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    .intro .container {
+        flex-direction: column;
+    }
+
+    .intro-image {
+        min-width: 100%;
+    }
+}
